@@ -3,205 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alexis Francisco J. Valdes</title>
+  <title>Alexis Jimenez</title>
   <style>
-    /* Prakhar.me inspired color palette & typography */
-    :root {
-      --bg: #fdfdfd; 
-      --text: #111111;
-      --muted: #666666;
-      --line: #eeeeee;
-      --link: #000000;
-    }
-
-    * { box-sizing: border-box; }
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    header { 
-      margin-bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .profile-photo {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      filter: grayscale(100%);
-      border: 1px solid var(--line);
-    }
-
-    h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 0 0 4px 0;
-      letter-spacing: -0.02em;
-    }
-
-    .role {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .nav-links a {
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-      text-decoration: underline;
-    }
-
-    section { margin-bottom: 48px; }
-
-    h2 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 8px;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
-    }
-
-    .item-title {
-      font-weight: 500;
-    }
-
-    .item-meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .item-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    footer {
-      margin-top: 100px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .container { padding: 40px 20px; }
-    }
+    :root{--bg:#ffffff;--paper:#ffffff;--text:#1f232b;--muted:#676f7d;--line:#e7ded1;--accent:#2f5fd0}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .wrap{max-width:920px;margin:0 auto;padding:30px 18px 52px}
+    .hero,.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 28px rgba(31,35,43,.05)}
+    .hero{display:grid;grid-template-columns:160px 1fr;gap:26px;align-items:center;padding:28px}
+    .photo-wrap{width:160px;height:160px;border-radius:22px;border:1px solid var(--line);background:#e8e1d7;overflow:hidden}
+    .photo{width:100%;height:100%;object-fit:cover;transform:scale(1.35);transform-origin:center top}
+    h1{margin:0 0 8px;font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.03em}
+    .role{margin:0 0 10px;color:var(--muted);font-size:1.05rem}
+    .meta{color:var(--muted);font-size:.95rem}
+    .buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    a.btn{display:inline-block;padding:11px 15px;border-radius:999px;text-decoration:none;font-weight:600;border:1px solid var(--line);color:var(--text);background:#fff;transition:.2s ease}
+    a.btn:hover{border-color:#cdbfae;transform:translateY(-1px)}
+    a.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .card{padding:22px}
+    h2{margin:0 0 12px;font-size:1.15rem;letter-spacing:.01em}
+    p{margin:0 0 12px}
+    ul{margin:0;padding-left:18px}
+    li{margin:10px 0}
+    .project{padding:12px 0;border-top:1px solid var(--line)}
+    .project:first-of-type{border-top:none;padding-top:0}
+    .project strong{display:block;margin-bottom:4px}
+    .chiprow{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#faf7f1;color:var(--text);font-size:.94rem}
+    footer{padding:20px 0 0;color:var(--muted);font-size:.92rem;text-align:center}
+    @media (max-width:720px){.hero,.grid{grid-template-columns:1fr}.photo-wrap{width:130px;height:130px}}
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <header>
-      <img src="photo.jpg" alt="Alexis Francisco J. Valdes" class="profile-photo">
+  <main class="wrap">
+    <section class="hero">
+      <div class="photo-wrap">
+        <img class="photo" src="photo.jpg" alt="Alexis Jimenez portrait">
+      </div>
       <div>
-        <h1>Alexis Francisco J. Valdes</h1>
-        <div class="role">Technology & Operations Consultant | Cloud & Enterprise Solutions[cite: 1, 2]</div>
-        <nav class="nav-links">
-          <a href="mailto:afjvaldes@gmail.com">Email</a>[cite: 1, 2]
-          <a href="https://github.com/afjimenez" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/alexisjimenez" target="_blank">LinkedIn</a>[cite: 1, 2]
-        </nav>
-      </div>
-    </header>
-
-    <section>
-      <h2>About</h2>
-      <p>
-        Computer science and engineering professional with a background in operations, enterprise support, and business process improvement[cite: 1, 2]. 
-        I work with a calm, structured approach and focus on practical solutions that create measurable value[cite: 1].
-      </p>
-    </section>
-
-    <section>
-      <h2>Experience Highlights</h2>
-      <div class="item">
-        <span class="item-title">Dell Technologies — Operations & Support</span>
-        <span class="item-meta">2021 — 2025</span>
-      </div>
-      <div class="item-desc">
-        Deployed 40+ scripts with 2.9M executions; global escalation point for high-value Microsoft 365 accounts[cite: 2].
-      </div>
-
-      <div class="item">
-        <span class="item-title">Service Architecture</span>
-        <span class="item-meta">2021 — 2023</span>
-      </div>
-      <div class="item-desc">
-        Standardized 600+ SKUs for global Infrastructure and Client service lines[cite: 2].
+        <h1>Alexis Francisco Jimenez Valdes</h1>
+        <p class="role">Technology & Operations Consultant</p>
+        <p class="meta">Cloud & Enterprise Solutions · Spain · English Speaker</p>
+        <div class="buttons">
+          <a class="btn primary" href="mailto:afjvaldes@gmail.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/alexisjimenez" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <div class="item">
-        <span class="item-title">M.S. Economics, Finance & Computation</span>
-        <span class="item-meta">2026</span>
-      </div>
-      <div class="item-desc">Universidad de Huelva (In Progress)[cite: 2]</div>
+    <section class="grid">
+      <article class="card">
+        <h2>About</h2>
+        <p>Computer science and engineering professional with a background in operations, enterprise support, and business process improvement.</p>
+        <p>I work with a calm, structured approach and focus on practical solutions that create measurable value.</p>
+      </article>
 
-      <div class="item">
-        <span class="item-title">B.S. Computer Engineering / B.A. Computer Science</span>
-        <span class="item-meta">2020</span>
-      </div>
-      <div class="item-desc">University of Arkansas[cite: 2]</div>
+      <aside class="card">
+        <h2>Stack & Focus</h2>
+        <div class="chiprow">
+          <span class="chip">Python & R</span>
+          <span class="chip">Microsoft 365 Admin</span>
+          <span class="chip">Automation Scripting</span>
+          <span class="chip">SLA Management</span>
+          <span class="chip">ISO 9001:2015</span>
+        </div>
+      </aside>
+
+      <article class="card">
+        <h2>Projects</h2>
+        <div class="project"><strong>Personal Portfolio</strong><span style="color:var(--muted)">A minimal website for contact, projects, and resume.</span></div>
+        <div class="project"><strong>Academic Work</strong><span style="color:var(--muted)">Economics, finance, and data analysis projects.</span></div>
+      </article>
+
+      <article class="card">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: afjvaldes@gmail.com</li>
+          <li>Phone: (+34) 618 582 485</li>
+          <li>LinkedIn: /in/alexisjimenez</li>
+          <li>Location: Spain</li>
+        </ul>
+      </article>
     </section>
 
-    <section>
-      <h2>Stack</h2>
-      <p>
-        Python, R, SQL, PHP, Microsoft 365 Admin, Scrum Master Certified (SMC)[cite: 2].
-      </p>
-    </section>
-
-    <footer>
-      &copy; 2026 Alexis Francisco J. Valdes. Built with GitHub Pages.
-    </footer>
-  </div>
-
+    <footer>© 2026 Alexis Jimenez</footer>
+  </main>
 </body>
 </html>
